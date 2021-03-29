@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/estilos/comenzadas.css">
+    <title>Revisión</title>
+</head>
+
+<body>
+    <%- include("partials/header.ejs") %>
+        <hr>
+        <h1 class="tituloEstado">Tareas que estan en revisión</h1>
+         <hr>
+        <article>
+            <% for(let i=0;i<nota.length;i++){ %>
+                <div class="container">
+                    <div class="container-Tarea">
+                        <h4>Titulo de la tarea: </h4>
+                        <p>
+                            <%=nota[i].titulo %>
+                        </p>
+                        <h4>Descripcion de la tarea a realizar:</h4>
+                        <p>
+                            <%= nota[i].descripcion %>
+                        </p>
+                        <h4>Fecha de creacion:</h4>
+                        <p>
+                            <%= nota[i].datestart %>
+                        </p>
+                        <h4>Fecha limite:</h4>
+                        <p>
+                            <%= nota[i].dateend %>
+                        </p>
+                        <h4>Estado de la tarea:</h4>
+                        <p>
+                            <%= nota[i].status %>
+                        </p>
+                    </div>
+                    <div class="container-icon">
+                        <a href="/edit/<%=nota[i].id %> "><i class="fas fa-edit"></i> editar</a>
+                        <a href="/delete/<%=nota[i].id %>"><i class="fas fa-trash-alt"></i> borrar</a>
+
+                    </div>
+                </div>
+                <%}%>
+        </article>
+</body>
+
+</html>

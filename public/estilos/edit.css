@@ -1,0 +1,38 @@
+body{
+    background-color: snow;
+}
+main{
+    display: flex;
+ justify-content: center;
+}
+.titleDit{
+    text-align: center;
+    font-family: montserrat;
+}
+.formHome{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: #ffff00;
+    border-radius: 15%;
+    align-items: center;
+    justify-content: center;
+}
+.formHome .interForm{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.interForm label{
+    margin-top: 5%;
+    margin-bottom: 2.5%;
+    font-family: montserrat;
+}
+.buttomEdit{
+    background-color:rgb(137, 137, 245);
+    border: solid 1px;
+    margin: 2%;
+    width: 30%;
+    
+}

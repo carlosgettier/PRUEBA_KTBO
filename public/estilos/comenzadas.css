@@ -1,0 +1,52 @@
+
+article{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    flex-flow: wrap;
+
+}
+.tituloEstado{
+    text-align: center;
+    font-family: montserat;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color:greenyellow;
+    margin: 30px;
+    width: 40%;
+    
+
+}
+.container-Tarea{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+}
+.container-Tarea p{
+    margin-bottom: 10%;
+    margin-top: 2.5%;
+    padding-top: 0px;
+    background-color: whitesmoke;
+  
+}
+.container-Tarea h4{
+    color: chocolate;
+ margin-bottom: 0%;
+ margin-top: 5%;
+ font-size: 18px;
+}
+.container-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.container-icon,a{
+    text-decoration: none;
+    color:rgb(72, 72, 240);
+}

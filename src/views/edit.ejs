@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/estilos/edit.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <title>Edicion</title>
+</head>
+
+<body>
+    <%- include("partials/header.ejs") %> 
+    
+    <h3 class="titleDit">EDITA UNA TAREA</h3>
+    <main>
+        <form action="/edit/<%= editar.id %>?_method=PUT" method="POST" class="formHome">
+            <div class="interForm">
+                <label for="">Titulo de la tarea</label>
+                <input type="text" name="titulo" value="<%= editar.titulo %> ">
+                <label for="">Descripcion</label>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10"><%= editar.descripcion%></textarea>
+                <label for="">Fecha de creacion</label>
+                <input type="date" name="dataStart" value="<%=editar.datestart%> ">
+                <label for="">Fecha limite de entrega</label>
+                <input type="date" name="dataEnd" value="<%= editar.dateend %> ">
+                <label for="">Estado</label>
+                <select name="estado" id="">
+                    <option value="iniciada">Iniciada</option>
+                    <option value="revision">Revision</option>
+                    <option value="finalizada">Finalizada</option>
+                </select>
+            </div>
+            <button type="submit" class="buttomEdit">Editar</button>
+        </form>
+    </main>
+</body>
+
+</html>

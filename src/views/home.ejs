@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/home.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+
+    <title>Inicio</title>
+</head>
+
+<body>
+    <%- include("partials/header.ejs") %> 
+    <hr>
+    <h1 class="titulo">HAS TU LISTA DE TAREAS</h1>
+    <main>
+
+        <form action="" method="POST" class="formHome">
+            <div class="interForm">
+                <label for="">TITULO DE LA TAREA</label>
+                <input type="text" name="titulo">
+                <label for="">DESCRIPCION</label>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+                <label for="">FECHA DE ENTREGA</label>
+                <input type="date" name="dataStart">
+                <label for="">FECHA LIMITE DE ENTREGA</label>
+                <input type="date" name="dataEnd">
+            </div>
+            <button type="submit"> Guardar</button>
+        </form>
+    </main>
+    <hr>
+    <h2 class="titulo">LISTA DE TAREAS</h2>
+    <article>
+        <% for(let i=0;i<todo.length;i++){ %>
+            <div class="container">
+                <div class="container-Tarea">
+                    <h4>Titulo de la tarea: </h4>
+                    <p>
+                        <%=todo[i].titulo %>
+                    </p>
+                    <h4>Descripcion de la tarea a realizar:</h4>
+                    <p>
+                        <%= todo[i].descripcion %>
+                    </p>
+                    <h4>Fecha de creacion:</h4>
+                    <p>
+                        <%= todo[i].datestart %>
+                    </p>
+                    <h4>Fecha limite:</h4>
+                    <p>
+                        <%= todo[i].dateend %>
+                    </p>
+                    <h4>Estado de la tarea:</h4>
+                    <p>
+                        <%= todo[i].status %>
+                    </p>
+                </div>
+                <div class="container-icon">
+                    <a href="/edit/<%=todo[i].id %> "><i class="fas fa-edit"></i> editar</a>
+                    <a href="/delete/<%=todo[i].id %>"><i class="fas fa-trash-alt"></i> borrar</a>
+
+                </div>
+            </div>
+            <%}%>
+    </article>
+
+</body>
+
+</html>

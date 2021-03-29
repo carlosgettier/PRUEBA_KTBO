@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/estilos/borrar.css">
+    <title>Borrado</title>
+</head>
+
+<body>
+    <%- include("partials/header.ejs") %> 
+    <hr>
+    <h1 class="tituloBorrar">Tarea a borrar</h1>
+    <hr>
+    <div class="container">
+        <div class="container-Tarea">
+            <h4 class="textDelete">Titulo de la tarea </h4>
+            <p>
+                <%=borrar.titulo%>
+            </p>
+            <h4 class="textDelete">Descripcion de la tarea</h4>
+            <p>
+                <%=borrar.descripcion%>
+            </p>
+            <h4 class="textDelete">Fecha de creacion</h4>
+            <p>
+                <%=borrar.datestart%>
+            </p>
+            <h4 class="textDelete">Fecha limite</h4>
+            <p>
+                <%=borrar.dateend %>
+            </p>
+            <h4 class="textDelete">Estado</h4>
+            <p>
+                <%=borrar.status %>
+            </p>
+            <form action="/delete/<%=borrar.id%>?_method=delete" method="POST" class="butDelete" >
+                <button type="submit">BORRAR</button>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>
